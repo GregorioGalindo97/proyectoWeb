@@ -1,0 +1,44 @@
+{% extends "proyectoWebApp/base.html" %}
+{% load static %}
+{% block content %}
+
+        {%for post in posts%}
+
+        <div class="container">
+            <div class="mt-5">
+                <section class="coments linear-white ">
+                    <div class="container">
+                        <div class="row">
+                        <blockquote class="col-12 text-dark text-center">
+                            <!--img-->
+                            <img src="{{post.imagen.url}}" alt="" class="coments__img"/>
+                            <span>{{post.titulo}}</span>
+                            <span>{{post.contenido}}</span>
+                            <footer class="blockquote-footer text-dark">
+                            <cite>{{post.autor}}</cite>
+                            </footer>
+                        </blockquote>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        {%endfor%}
+
+       
+        <section>
+            <div style="width: 75%; margin: auto; text-align: center; background-color:rgba(0, 89, 255, 0.658) ">
+            
+                Categorias:
+                {%for post in posts%}
+                    {%for categoria in post.categorias.all%}
+                        <a href="{% url 'categoria' categoria.id %}" class="linksCategorias">{{categoria.nombre}}</a> &nbsp;&nbsp;&nbsp;
+                    {%endfor%}
+                {%endfor%}  
+
+            </div>
+        </section>
+
+
+{% endblock %}

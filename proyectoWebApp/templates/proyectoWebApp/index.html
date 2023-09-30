@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GRegs</title>
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!-- CDN Font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <!-- CSS Main -->
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  
+  <body>
+    <!--Header-->
+    <header class="header">
+      <div class="container vh-50">
+        <!--Navbar-->
+        <nav class="row text-white justify-content-between align-item-center text-uppercase pt-4">
+          <!--Logo-->
+          <a href="#" class="col-auto text-reset">
+            <img src="./img/logo-white.svg" alt="Logo Gregs" class="img-logo" />
+            Gregs
+          </a>
+
+              <a class="text-reset pr-3 {% if request.path == '/' %} active {% endif %}" href="{% url 'Home' %}">Inicio</a>
+              <a class="text-reset pr-3 {% if request.path == '/Tienda' %} active {% endif %}" href="{% url 'Tienda' %}">Inicio</a> 
+              <a class="text-reset pr-3 {% if request.path == '/Contacto' %} active {% endif %}" href="{% url 'Contacto' %}">Inicio</a>
+              <a class="text-reset pr-3 {% if request.path == '/Productos' %} active {% endif %}" href="{% url 'Productos' %}">Inicio</a>
+              <a class="text-reset pr-3 {% if request.path == '/Blog' %} active {% endif %}" href="{% url 'Blog' %}">Inicio</a>
+
+        </nav>
+
+        <!--Descripcion-->
+        <div class="row h-100 align-items-center">
+          <div class="col-6 text-white">
+            <!--Title-->
+            <h1 class="text-capitalize">
+              <span class="text-warning h5">El lugar mas</span>
+              <br />grandioso
+            </h1>
+            <!--Descripcion-->
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+              accusantium distinctio numquam tempora commodi magnam voluptate
+              modi quam quisquam vitae dolore cum repellat ipsa omnis, iste,
+              animi maxime consequuntur qui?
+            </p>
+            <!--Button-->
+            <a href="" class="text-reset btn btn-warning">Hazlo o te pego</a>
+          </div>
+        </div>
+      </div>
+      <img src="./img/cuts/cut-header.svg" alt="" />
+    </header>
+
+    <!--Experience-->
+    <section class="container">
+      <div class="row">
+        <!--text-->
+        <div class="col-12 text-center">
+          <h2 class="text-warning text-uppercase h6">Experience</h2>
+          <h3 class="text">Esto no te lo puedes perder</h3>
+          <p class="text-muted">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
+            voluptatum inventore, doloribus fugit neque numquam nulla eum vitae
+            tempore praesentium laboriosam eaque eveniet, unde illo obcaecati
+            earum! Dignissimos, itaque aliquid!
+          </p>
+        </div>
+        <!--cards-->
+
+        <!--Card#1-->
+        <article class="col-4 card-effect">
+          <div class="card text-white">
+            <img
+              src="./img/raiting.png"
+              alt="Raiting"
+              class="card-img card-img-filter"
+            />
+            <div
+              class="card-img-overlay d-flex flex-column justify-content-center text-center"
+            >
+              <h4>Rafting</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+                recusandae laborum fuga, autem numquam, sapiente facilis, ipsum
+                architecto sint odit veritatis. Recusandae adipisci explicabo
+                inventore voluptates, a quam ipsum dolorem.
+              </p>
+              <a href="#" class="text-reset">Mas información</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="col-4 card-effect">
+          <div class="card text-white">
+            <img
+              src="./img/hiking.png"
+              alt="Hiking"
+              class="card-img card-img-filter"
+            />
+            <div class="card-img-overlay d-flex flex-column justify-content-center text-center">
+              <h4>Hiking</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+                recusandae laborum fuga, autem numquam, sapiente facilis, ipsum
+                architecto sint odit veritatis. Recusandae adipisci explicabo
+                inventore voluptates, a quam ipsum dolorem.
+              </p>
+              <a href="#" class="text-reset">Mas información</a>
+            </div>
+          </div>
+        </article>
+        <article class="col-4 card-effect">
+          <div class="card text-white">
+            <img
+              src="./img/raiting.png"
+              alt="Raiting"
+              class="card-img card-img-filter"
+            />
+            <div
+              class="card-img-overlay d-flex flex-column justify-content-center text-center"
+            >
+              <h4>Rafting</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+                recusandae laborum fuga, autem numquam, sapiente facilis, ipsum
+                architecto sint odit veritatis. Recusandae adipisci explicabo
+                inventore voluptates, a quam ipsum dolorem.
+              </p>
+              <a href="#" class="text-reset">Mas información</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!--Comentarios-->
+
+    <section class="coments linear-white">
+    <img src="img/cuts/cut-header.svg" alt="" class="transform-turn">
+      <div class="container">
+        <div class="row">
+          <blockquote class="col-12 text-white text-center">
+            <!--img-->
+            <img src="./img/john-doe.jpeg" alt="Ese soy yo" class="coments__img"/>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+            </p>
+            <footer class="blockquote-footer text-white">
+              <cite> Gregorio Galindo</cite>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+
+    
+    <footer class="footer text-faded text-center py-5">
+      <div class="container">
+        <p class="m-0">
+	        <a href="#" class="link">
+	          <span class="fa-stack fa-lg">
+	            <i class="fa fa-circle fa-stack-2x"></i>
+	            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+	          </span>
+	        </a>
+	        <a href="#" class="link">
+	          <span class="fa-stack fa-lg">
+	            <i class="fa fa-circle fa-stack-2x"></i>
+	            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+	          </span>
+	        </a>
+	        <a href="#" class="link">
+	          <span class="fa-stack fa-lg">
+	            <i class="fa fa-circle fa-stack-2x"></i>
+	            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+	          </span>
+	        </a>
+	    </p>
+        <p class="m-0 mbt">
+        	<a href="sample.html" class="link">Política de privacidad</a> ·
+        	<a href="sample.html" class="link">Aviso legal</a> ·
+        	<a href="sample.html" class="link">Cookies</a>
+		</p>
+        <p class="m-0 mbt1">&copy; Gestión de Pedidos 2023</p>
+      </div>
+	</footer>
+
+    <!-- Jquery -->
+    <script src="./js/jquery-3.5.0.min.js"></script>
+    <!-- Popper -->
+    <script src="./js/popper.min.js"></script>
+    <!-- JS Bootstrap -->
+    <script src="./js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+
+

@@ -1,0 +1,97 @@
+{% extends "proyectoWebApp/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="row h-100 align-items-center pb-5 mb-5 mt-5 pt-5">
+    <div class="col-6 text-white">
+      <!--Title-->
+      <h1 class="text-capitalize">
+        <span class="text-warning h5">El lugar mas</span>
+        <br />grandioso
+      </h1>
+      <!--Descripcion-->
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+        accusantium distinctio numquam tempora commodi magnam voluptate
+        modi quam quisquam vitae dolore cum repellat ipsa omnis, iste,
+        animi maxime consequuntur qui?
+      </p>
+      <!--Button-->
+      <a href="" class="text-reset btn btn-warning">Hazlo o te pego</a>
+    </div>
+</div>
+
+        {%for post in posts%}
+
+        
+
+        <div class="container">
+            <div class="mt-5 items-align-left">
+                <section class="coments linear-white ">
+                    <div class="container">
+                        <div class="row">
+                        <blockquote class="col-12 text-dark">
+                            <!--img-->
+                            <img src="{{post.imagen.url}}" alt="" class="coments__img"/>
+                            <span>{{post.titulo}}</span>
+                            <span>{{post.contenido}}</span>
+                            <footer class="blockquote-footer text-dark">
+                            <cite>{{post.autor}}</cite>
+                            </footer>
+                        </blockquote>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+    
+        {%endfor%}
+
+       
+        <section>
+            <div style="width: 75%; margin: auto; text-align: center; background-color:rgba(0, 89, 255, 0.658) ">
+            
+            Categorias:
+            {%for post in posts%}
+                {%for categoria in post.categorias.all%}
+                    <a href="{% url 'categoria' categoria.id %}" class="linksCategorias">{{categoria.nombre}}</a> &nbsp;&nbsp;&nbsp;
+                {%endfor%}
+            {%endfor%}  
+
+            </div>
+        </section>
+
+        <footer class="footer text-faded text-center py-5">
+            <div class="container">
+              <p class="m-0">
+                <a href="#" class="link">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+                <a href="#" class="link">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+                <a href="#" class="link">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+            </p>
+              <p class="m-0 mbt">
+                <a href="sample.html" class="link">Política de privacidad</a> ·
+                <a href="sample.html" class="link">Aviso legal</a> ·
+                <a href="sample.html" class="link">Cookies</a>
+          </p>
+              <p class="m-0 mbt1">&copy; Gestión de Pedidos 2023</p>
+            </div>
+        </footer>
+        
+
+{% endblock %}

@@ -1,0 +1,46 @@
+<header class="header">
+    <div class="container vh-50">
+      <!--NavBar-->
+      <nav class="row text-white justify-content-between align-item-center text-uppercase pt-4">
+        <a href="#" class="col-auto text-reset">
+          <img src="{%static 'proyectoWebApp/img/logo-white.svg'%}" alt="" class="img-logo">
+          Gregs
+        </a>
+
+        <a class="text-reset pr-3 {% if request.path == '/' %} active {% endif %}" href="{% url 'Home' %}">Inicio</a>
+        <a class="text-reset pr-3 {% if request.path == '/Tienda' %} active {% endif %}" href="{% url 'Tienda' %}">Tienda</a> 
+        <a class="text-reset pr-3 {% if request.path == '/Contacto' %} active {% endif %}" href="{% url 'Contacto' %}">Contacto</a>
+        <a class="text-reset pr-3 {% if request.path == '/Productos' %} active {% endif %}" href="{% url 'Productos' %}">Productos</a>
+        <a class="text-reset pr-3 {% if request.path == '/Blog' %} active {% endif %}" href="{% url 'Blog' %}">Blog</a>
+
+            {% if user.is_authenticated %}
+              Bienvenido! {{user.username}} &nbsp;
+              <a href="{% url 'cerrar_sesion' %}" class="text-reset pr-3">Cerrar sesion</a>
+            {% else %}
+              <a href="{% url 'logear' %}" class="text-reset">Login </a> 
+              <a href="{% url 'Autenticacion' %}" class="text-reset ">Registrate</a>
+            {% endif %}
+      </nav>
+
+      <!--Descripcion-->
+      <div class="row h-100 align-items-center">
+        <div class="col-6 text-white">
+          <!--Title-->
+          <h1 class="text-capitalize">
+            <span class="text-warning h5">El lugar mas</span>
+            <br />grandioso
+          </h1>
+          <!--Descripcion-->
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+            accusantium distinctio numquam tempora commodi magnam voluptate
+            modi quam quisquam vitae dolore cum repellat ipsa omnis, iste,
+            animi maxime consequuntur qui?
+          </p>
+          <!--Button-->
+          <a href="" class="text-reset btn btn-warning">Hazlo o te pego</a>
+          </div>
+          </div>
+        </div>
+      <img src="{%static 'proyectoWebApp/img/bg-header.jpg'%}" alt="" />
+  </header>
